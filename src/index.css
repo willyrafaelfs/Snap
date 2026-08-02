@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+:root {
+  --brand-primary: #7c3aed;
+  --brand-accent: #ec4899;
+  --brand-gold: #f5b942;
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  overscroll-behavior: none;
+}
+
+body {
+  background: #0b0710;
+  color: #f5f3ff;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ---------- Shutter Snap ---------- */
+@keyframes flash-pulse {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.anim-flash {
+  animation: flash-pulse 400ms ease-out forwards;
+}
+
+@keyframes video-blitz {
+  0% {
+    filter: brightness(0);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+.anim-video-blitz {
+  animation: video-blitz 200ms ease-out forwards;
+}
+
+/* ---------- Countdown Pop ---------- */
+@keyframes countdown-pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  55% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.anim-countdown-pop {
+  animation: countdown-pop 700ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* ---------- Sticker Bounce-In ---------- */
+@keyframes sticker-bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.anim-sticker-bounce-in {
+  animation: sticker-bounce-in 600ms ease-out;
+}
+
+/* ---------- Gallery Sheet Slide ---------- */
+.gallery-sheet {
+  transition: transform 400ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+.gallery-backdrop {
+  transition: opacity 400ms ease;
+  backdrop-filter: blur(0px);
+}
+.gallery-backdrop.open {
+  backdrop-filter: blur(6px);
+}
+
+/* ---------- Ripple Pulse (capture button idle) ---------- */
+@keyframes ripple-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+  }
+}
+.anim-ripple {
+  animation: ripple-pulse 2s infinite;
+}
+
+/* ---------- Filter Transition ---------- */
+.video-filterable {
+  transition: filter 300ms ease;
+}
+
+/* ---------- Misc ---------- */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  scrollbar-width: none;
+}
